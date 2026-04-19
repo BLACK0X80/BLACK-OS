@@ -27,7 +27,7 @@
 
 <!-- Typing Animation SVG -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=00FF00&center=true&vCenter=true&multiline=true&repeat=false&width=600&height=100&lines=Full+TCP%2FIP+Network+Stack;POSIX-like+Capabilities+%26+Security;Symmetric+Multiprocessing+(SMP);Hardware+Accelerated+Window+Manager;ELF32+Binary+Execution;Preemptive+Task+Scheduling" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=00FF00&center=true&vCenter=true&width=800&height=60&lines=Full+TCP%2FIP+Network+Stack;POSIX-like+Capabilities+%26+Security;Symmetric+Multiprocessing+(SMP);Hardware+Accelerated+Window+Manager;ELF32+Binary+Execution;Preemptive+Task+Scheduling" alt="Typing SVG" />
 </p>
 
 <br/>
