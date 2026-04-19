@@ -27,7 +27,7 @@
 
 <!-- Typing Animation SVG -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=00FF00&center=true&vCenter=true&multiline=true&repeat=false&width=600&height=100&lines=Zero-Comment+Brutalist+Engineering;Interactive+Graphical+Desktop+Environment;Matrix+Rendering+%2B+Virtual+File+System;Symmetric+Multiprocessing+(SMP)" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=00FF00&center=true&vCenter=true&multiline=true&repeat=false&width=600&height=100&lines=Full+TCP%2FIP+Network+Stack;POSIX-like+Capabilities+%26+Security;Symmetric+Multiprocessing+(SMP);Hardware+Accelerated+Window+Manager;ELF32+Binary+Execution;Preemptive+Task+Scheduling" alt="Typing SVG" />
 </p>
 
 <br/>
@@ -45,15 +45,17 @@
 <tr>
 <td width="50%">
 
-**BlackOS PHANTOM** is a high-performance, monolithic operating system engineered closely to the metal. Designed to be completely independent, it implements its own standard C library (`libc`), device drivers, security isolation rings, and a custom interactive graphical environment.
-
-Developed under an uncompromising, zero-comment "Black" minimalist aesthetic. Code logic and standard `black_` prefixes handle documentation innately.
+**BlackOS PHANTOM** is a high-performance, monolithic operating system engineered closely to the metal. Designed to be completely independent, it implements its own standard C library (`libc`), device drivers, security isolation rings, networking suite, and a custom interactive graphical environment.
 
 **Key Technical Achievements:**
-- Symmetric Multiprocessing (SMP)
-- Multi-Layered Virtual File Systems (VFS, RamFS, DevFS, ProcFS)
+- Symmetric Multiprocessing (SMP) Support
+- Comprehensive TCP/IP Network Stack
+- Preemptive Multitasking & Context Switching
+- Custom 32-bit ELF Loader
+- Multi-Layered Virtual File Systems (VFS, DEVFS, PROCFS)
 - ACPI, APIC, and IOAPIC Hardware Scanning
-- Security Isolations and Ring Implementations
+- Security Isolations, Capabilities, and Seccomp
+- Advanced Concurrency Primitives
 
 </td>
 <td width="50%">
@@ -81,106 +83,122 @@ Developed under an uncompromising, zero-comment "Black" minimalist aesthetic. Co
 
 ## Table of Contents
 
-- [Core Features](#core-features)
-- [Architecture Insights](#architecture-insights)
 - [Live Preview Workspace](#live-preview-workspace)
-- [Subsystems & Drivers](#subsystems--drivers)
+- [System Architecture](#system-architecture)
+- [Deep Dive: Operating System Components](#deep-dive-operating-system-components)
+- [Networking Structure](#networking-structure)
+- [Graphic Interface (GUI) Engine](#graphic-interface-gui-engine)
+- [Security & Process Management](#security--process-management)
 - [Build Requirements](#build-requirements)
 - [Quick Start Configuration](#quick-start-configuration)
-- [System Structure](#system-structure)
 - [License](#license)
-
-<br/>
-
-## Core Features
-
-<div align="center">
-
-| **Kernel Core** | **Memory & Storage** | **Graphics & UI** | **Subsystems** |
-|:---:|:---:|:---:|:---:|
-| Preemptive Scheduler | PMM & VMM Layer | Drag & Drop Windows | Syscall Dispatcher |
-| Hardware Interrupts | Heap (kmalloc) | Resizing & Z-Indexing | e1000 Networking |
-| SMP Support | VFS & RamFS | Drop Shadow Renderer | Security Isolations |
-| Zero-Comment Code | ProcFS / DevFS | Matrix Environment | IPC Inter-process |
-
-</div>
-
-### Detailed Feature Breakdown
-
-- **Symmetric Multiprocessing (SMP) & Task Management**: A preemptive multi-tasking scheduler built over a Local APIC/IOAPIC backbone. Tasks are efficiently balanced across multiple logical cores with rapid context switching.
-- **Custom Graphical Interface Engine**: High-performance, event-driven window manager (`gui/desktop.h`). Features window dragging, dynamic resizing, drop shadows, and true overlapping depth rendering (Z-indexing).
-- **Core Memory Management**: Segmented Physical Memory Management (PMM) mapping over the multiboot data, integrated with a robust paging setup (Virtual Memory Manager/VMM) and dynamic heap allocators.
-- **Virtual File System (VFS/RAMFS)**: Highly modular file persistence system running entirely in hardware memory. During boot, dynamic directories such as `/System`, `/Users`, and `/Logs` are provisioned autonomously.
-- **Built-In Applications**:
-    - **BlackNotepad**: A real-time text editor that accepts hardware keystrokes and interfaces with VFS endpoints.
-    - **Terminal**: A fully integrated shell environment bridging to the native IPC loops (`ls`, `calc`, `mkdir`, `clear`, etc.).
-    - **File Explorer**: Windows-style graphical directory traverser that interacts via `vfs_readdir`.
-
-<br/>
-
-## Architecture Insights
-
-```mermaid
-graph TB
-    subgraph User Space Applications
-        A[Terminal Shell] --> B[BlackNotepad]
-        A --> C[File Explorer]
-        B --> E[Task Manager]
-    end
-    
-    subgraph Custom Graphics Subsystem
-        F[Window Compositor] --> G[Z-Index Renderer]
-        G --> H[Event / Input Queue]
-    end
-    
-    subgraph Core Kernel Monolith
-        I[VFS / File Interfaces] --> J[Preemptive SMP Scheduler]
-        J --> K[Memory Paging & Heap]
-    end
-    
-    subgraph Hardware Abstraction Layer
-        L[ACPI / PCI Scanners] --> M[APIC / IOAPIC Drivers]
-        M --> N[(Physical Hardware)]
-    end
-    
-    A -.-> F
-    E -.-> J
-    C -.-> I
-    F --> I
-    I --> L
-    K --> L
-    
-    style A fill:#000,color:#0f0
-    style F fill:#000,color:#0f0
-    style I fill:#000,color:#0f0
-    style J fill:#000,color:#0f0
-    style L fill:#000,color:#0f0
-```
 
 <br/>
 
 ## Live Preview Workspace
 
-Experience the true capability of **BlackOS PHANTOM**. Below is raw footage of the system booting, utilizing dynamic Z-index window rendering, file system navigation, and multi-tasking without an underlying host OS.
+Experience the true capability of **BlackOS PHANTOM**. Below is raw footage of the system booting, interacting with the graphical interface, dynamically rendering overlapping windows, traversing directories, and executing local tasks entirely unassisted by an underlying host operating system.
 
 <div align="center">
-  <video src="https://github.com/BLACK0X80/BLACK-OS/raw/main/demo%20video/black%20os.mp4" width="800px" controls></video>
+  <video src="https://github.com/BLACK0X80/BLACK-OS/raw/main/demo%20video/black%20os.mp4" width="850" controls></video>
   <br/>
-  <em>If the player above does not load inline, <a href="https://github.com/BLACK0X80/BLACK-OS/raw/main/demo%20video/black%20os.mp4">click here to watch the demo</a>.</em>
+  <em>If the player above does not load inline, <a href="https://github.com/BLACK0X80/BLACK-OS/raw/main/demo%20video/black%20os.mp4">click here to watch the demo directly</a>.</em>
 </div>
 
 <br/>
 
-## Subsystems & Drivers
+## System Architecture
 
-BlackOS attempts to be fully independent and talks directly to bare-metal hardware. Integrated drivers include:
+```mermaid
+graph TB
+    subgraph User Space Applications
+        A[Terminal Shell] --> B[POSIX Utilities]
+        A --> C[Music Player]
+        A --> D[File Manager]
+    end
+    
+    subgraph Core Kernel Monolith Services
+        E[Preemptive SMP Scheduler] --> F[ELF Binary Loader]
+        F --> G[Memory Paging & Heap]
+        G --> H[Advanced IPC]
+        
+        I[VFS / File Interfaces] --> J[TCP/IP Network Stack]
+        J --> K[Device Sockets]
+    end
+    
+    subgraph Native Drivers / Hardware Abstraction
+        L[ACPI / PCI / APIC] --> M[e1000 Networking]
+        L --> N[Graphics & Framebuffer]
+        L --> O[ATA Storage & Keyboard/Mouse]
+        
+        M --> P[(Network Interface)]
+        N --> Q[(Hardware Display)]
+        O --> R[(Peripherals)]
+    end
+    
+    A -.-> E
+    C -.-> I
+    E --> L
+    H --> L
+    J --> L
+    
+    style A fill:#000,color:#0f0
+    style E fill:#000,color:#0f0
+    style L fill:#000,color:#0f0
+    style I fill:#000,color:#0f0
+    style J fill:#000,color:#0f0
+```
 
-- **Bus Communication**: PCI Enumeration, ACPI table parsing.
-- **Networking**: Early stage support for the Intel `e1000` network interface controller.
-- **Input Devices**: Raw PS/2 Keyboard & Mouse interrupts.
-- **Audio Output**: Creative Sound Blaster 16 (`sb16`) and generic `wav` stream handling.
-- **Graphics Output**: VGA driver interfaces masking standard memory boundaries (`0xB8000`) and advanced high-definition framebuffers.
-- **Timekeeping**: PIT (Programmable Interval Timer) alongside RTC (Real Time Clock) polling.
+<br/>
+
+## Deep Dive: Operating System Components
+
+BlackOS provides a comprehensive stack designed utilizing modern OS design patterns translated directly to bare-metal interactions.
+
+### Symphony of Synchronization
+True Symmetric Multiprocessing (SMP) creates complex concurrency edge cases. BlackOS mitigates this with a robust internal synchronization API:
+- `Mutexes` & `Spinlocks`
+- `Semaphores` & `Condition Variables`
+- `Read-Write Locks` (RWLock)
+- Cross-CPU `Waitqueues` 
+
+### File Systems Architecture
+The file system separates physical storage semantics from the kernel logic using a highly modular VFS (Virtual File System) model. Mounted components include:
+- **RamFS**: In-memory ephemeral storage that is spun up dynamically at boot.
+- **DevFS**: Virtual interface mapping to hardware drivers (e.g. `/dev/sda`).
+- **ProcFS**: Exposes deep kernel execution data, providing real-time views into running threads and SMP allocations.
+- **FAT32 Integration**: Foundational read/write blocks for standard DOS/Windows formatted disk compatibility.
+
+<br/>
+
+## Networking Structure
+
+Built directly into the core, the network layer handles a complete TCP/IP stack implementation.
+- **Physical Integration**: Direct support for standard Intel `e1000` Network Interface Controllers.
+- **Ethernet / Link Layer**: In-house packet framing, ARP resolution, and loopback mechanisms.
+- **Network Layer**: IP parsing and standard ICMP (Ping) processing.
+- **Transport Layer**: Implements full stream controls for TCP endpoints and UDP datagram sockets.
+- **Application Services**: HTTP handling and fundamental DHCP handshakes for autonomous IP allocation.
+
+<br/>
+
+## Graphic Interface (GUI) Engine
+
+Operating independently of standard X11 or external display engines, BlackOS maintains a bespoke graphical window compositor.
+- **Framebuffer Driver**: High-color depth mapping replacing legacy text-mode memory buffers.
+- **Z-Index Rendering Engine**: Mathematically calculates depths of overlapping frames ensuring perfect visual layering and drop shadows around active contexts.
+- **Event Loops**: Efficient signal tracking for mouse coordinates, clicks, and keyboard strokes bridging directly from IRQs into graphical input arrays.
+- **Dynamic Assets**: Built-in support for desktop backgrounds, cursors, and visual matrix animations rendered actively via hardware interrupts.
+
+<br/>
+
+## Security & Process Management
+
+- **ELF32 Native Processing**: Loads dynamically linked standard ELF formatted `.elf` binaries into distinct execution profiles directly inside user space memory constraints.
+- **Advanced Ring Protections**: Employs process isolation keeping crashing user-land applications (`Ring 3`) from throwing segmentation faults into the core kernel (`Ring 0`).
+- **Capabilities & POSIX Emulation**: Mirrors standard Linux/Unix capabilities assigning root vs guest-level rights through the `security.c` and `seccomp.c` modules.
+- **Rich POSIX Applications**: Comes populated with classic Unix tooling locally compiled (`ls`, `uptime`, `cat`, `ps`, `wc`, `yes`, `echo`).
+- **Inter-Process Communication (IPC)**: Reliable signal handlers allowing disconnected applications to exchange buffer blocks asynchronously.
 
 <br/>
 
@@ -189,10 +207,10 @@ BlackOS attempts to be fully independent and talks directly to bare-metal hardwa
 The OS is configured to be cross-compiled utilizing a standard `i686-elf-` GNU toolchain. It can be built natively on Linux, macOS, or within a Windows `MinGW UCRT64` / `MSYS2` environment.
 
 - `gcc` (13.2.0+ cross-compiled to i686)
-- `nasm` (For Assembly assembly targets)
+- `nasm` (For x86 Assembly targets)
 - `make`
-- `qemu-system-i386` (for hardware emulation)
-- `mtools` & `xorriso` (for Limine ISO generations)
+- `qemu-system-i386` (for hardware emulation validation)
+- `mtools` & `xorriso` (for Limine ISO bootloader payloads)
 
 <br/>
 
@@ -206,7 +224,7 @@ To compile the monolithic kernel, link the image, and start execution directly i
 make run
 ```
 
-*This will automatically launch QEMU with 256M of RAM, 4 SMP cores, and standard VGA capabilities.*
+*This will automatically launch QEMU with 256M of RAM, 4 SMP cores, and standard VGA capabilities allowing immediate interaction with the network interfaces and desktop GUI.*
 
 ### 2. Physical Hardware ISO Packaging
 
@@ -218,35 +236,10 @@ make iso
 
 ### 3. Deep Debugging
 
-If you are expanding the `black_` system architecture, use the debug target to spawn GDB over port 1234:
+If you are expanding the system architecture, use the debug target to spawn GDB over port 1234:
 
 ```bash
 make debug
-```
-
-<br/>
-
-## System Structure 
-
-```
-BlackOS/
-├── assets/                   # README graphics
-├── boot/                     # x86 Multiboot Assembly Hooks
-├── build/                    # Output object files and binaries
-├── config/                   # Target linker scripts (linker.ld)
-├── demo video/               # Showcase footage and operations
-├── include/                  # Global C Header prototypes
-├── iso/                      # Final ISO images ready for deployment
-├── kernel/                   # Main monolithic code operations
-│   ├── arch/                 # Architecture specific configurations (GDT/IDT/x86)
-│   ├── drivers/              # Hardware interaction code (VGA, PCI, e1000, ACPI)
-│   ├── fs/                   # File system engines (VFS, DEVFS, PROCFS)
-│   ├── gui/                  # Desktop logic and window rendering
-│   ├── mm/                   # Memory models (PMM, VMM, SLAB allocators)
-│   ├── net/                  # Network foundations
-│   └── sync/                 # Concurrency implementations (Mutexes, Spinlocks)
-├── libc/                     # Standalone C utilities (string, stdlib)
-└── usermode/                 # Packaged desktop executables
 ```
 
 <br/>
