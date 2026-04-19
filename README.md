@@ -164,9 +164,9 @@ graph TB
 Experience the true capability of **BlackOS PHANTOM**. Below is raw footage of the system booting, utilizing dynamic Z-index window rendering, file system navigation, and multi-tasking without an underlying host OS.
 
 <div align="center">
-  <video src="demo%20video/black%20os.mp4" width="100%" controls autoplay loop style="max-width: 900px; border: 2px solid #333; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,255,0,0.1);"></video>
+  <video src="https://github.com/BLACK0X80/BLACK-OS/raw/main/demo%20video/black%20os.mp4" width="800px" controls></video>
   <br/>
-  <em style="color: #666;">If the player above does not load inline, <a href="demo%20video/black%20os.mp4">click here to download and watch the raw MP4 format</a>.</em>
+  <em>If the player above does not load inline, <a href="https://github.com/BLACK0X80/BLACK-OS/raw/main/demo%20video/black%20os.mp4">click here to watch the demo</a>.</em>
 </div>
 
 <br/>
