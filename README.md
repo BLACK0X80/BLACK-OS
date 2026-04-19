@@ -39,19 +39,7 @@
 
 <br/>
 
-## 🎬 Live Preview Workspace
-
-Experience the true capability of **BlackOS PHANTOM**. Below is raw footage of the system booting, utilizing dynamic Z-index window rendering, file system navigation, and multi-tasking without an underlying host OS.
-
-<div align="center">
-  <video src="demo%20video/black%20os.mp4" width="100%" controls autoplay loop style="max-width: 900px; border: 2px solid #333; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,255,0,0.1);"></video>
-  <br/>
-  <em style="color: #666;">If the player above does not load inline, <a href="demo%20video/black%20os.mp4">click here to download and watch the raw MP4 format</a>.</em>
-</div>
-
-<br/>
-
-## 🌐 Overview
+## Overview
 
 <table>
 <tr>
@@ -91,10 +79,11 @@ Developed under an uncompromising, zero-comment "Black" minimalist aesthetic. Co
 
 <br/>
 
-## 📖 Table of Contents
+## Table of Contents
 
 - [Core Features](#core-features)
 - [Architecture Insights](#architecture-insights)
+- [Live Preview Workspace](#live-preview-workspace)
 - [Subsystems & Drivers](#subsystems--drivers)
 - [Build Requirements](#build-requirements)
 - [Quick Start Configuration](#quick-start-configuration)
@@ -103,7 +92,7 @@ Developed under an uncompromising, zero-comment "Black" minimalist aesthetic. Co
 
 <br/>
 
-## 🚀 Core Features
+## Core Features
 
 <div align="center">
 
@@ -129,7 +118,7 @@ Developed under an uncompromising, zero-comment "Black" minimalist aesthetic. Co
 
 <br/>
 
-## 🧠 Architecture Insights
+## Architecture Insights
 
 ```mermaid
 graph TB
@@ -170,7 +159,19 @@ graph TB
 
 <br/>
 
-## ⚙️ Subsystems & Drivers
+## Live Preview Workspace
+
+Experience the true capability of **BlackOS PHANTOM**. Below is raw footage of the system booting, utilizing dynamic Z-index window rendering, file system navigation, and multi-tasking without an underlying host OS.
+
+<div align="center">
+  <video src="demo%20video/black%20os.mp4" width="100%" controls autoplay loop style="max-width: 900px; border: 2px solid #333; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,255,0,0.1);"></video>
+  <br/>
+  <em style="color: #666;">If the player above does not load inline, <a href="demo%20video/black%20os.mp4">click here to download and watch the raw MP4 format</a>.</em>
+</div>
+
+<br/>
+
+## Subsystems & Drivers
 
 BlackOS attempts to be fully independent and talks directly to bare-metal hardware. Integrated drivers include:
 
@@ -183,7 +184,7 @@ BlackOS attempts to be fully independent and talks directly to bare-metal hardwa
 
 <br/>
 
-## 🛠️ Build Requirements
+## Build Requirements
 
 The OS is configured to be cross-compiled utilizing a standard `i686-elf-` GNU toolchain. It can be built natively on Linux, macOS, or within a Windows `MinGW UCRT64` / `MSYS2` environment.
 
@@ -195,7 +196,7 @@ The OS is configured to be cross-compiled utilizing a standard `i686-elf-` GNU t
 
 <br/>
 
-## ⚡ Quick Start Configuration
+## Quick Start Configuration
 
 ### 1. Compile & Emulate
 
@@ -225,7 +226,7 @@ make debug
 
 <br/>
 
-## 📂 System Structure 
+## System Structure 
 
 ```
 BlackOS/
@@ -250,7 +251,7 @@ BlackOS/
 
 <br/>
 
-## 📜 License
+## License
 
 <div align="center">
 
