@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = [
+    "black_core",
+    "black_crypto",
+    "black_parser",
+    "black_mem",
+    "black_net",
+]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
